@@ -1,11 +1,15 @@
 # jiipeefin.github.io
 
 Tavoite:    
-    Yksinkertainen sivusto, joka toimii käyttäjän perusportfoliona sekä linkkien keruupaikkana.
-    Myöhemmin koontina erilaisista mielenkiinnon kohteista: tilastoja, uutisia,...
-
-Suunnitteluperuste: 
-    yksinkertaisuus, retro (disco, nintendo)
+ 1. käyttäjän portfolion
+ 2. koontipaikka eri aiheiden linkeille ja uutisille
+ 3. koontipaikka eri aiheiden opiskelumateriaaleihin
+   
+Suunnitteluperiaatteet: 
+ - yksinkertaisuus
+ - saavutettavuus (WCAG 2.1?)
+ - retro (disco / nintendo)
+ - arcade
 
 Graafinen ohje: 
     ei vielä 
