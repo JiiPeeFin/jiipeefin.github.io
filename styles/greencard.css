@@ -1,0 +1,267 @@
+/* ========= Nature/Green theme with CSS variables ========= */
+    :root {
+      --bg: #0e1a12;                 /* deep forest */
+      --bg-elev: #122117;            /* elevated surface */
+      --card: #15261b;
+      --text: #e9f2ea;               /* high-contrast on dark */
+      --muted: #cfe3d2;
+      --brand: #3fbf6b;              /* fresh leaf */
+      --brand-strong: #2aa85a;
+      --accent: #94d3a2;             /* light mint accent */
+      --ring: #5ad08955;             /* focus ring */
+      --border: #2b3a30;
+
+      --maxw: 1100px;
+      --radius: 14px;
+      --shadow: 0 10px 24px rgba(0,0,0,.22), 0 2px 6px rgba(0,0,0,.18);
+    }
+
+    /* ========= Global reset & base ========= */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #183023 0%, transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, #11321f 0%, transparent 60%),
+        linear-gradient(180deg, #0a150f 0%, var(--bg) 30%);
+      font: 16px/1.65 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ========= Layout helpers ========= */
+    .container {
+      width: min(100%, var(--maxw));
+      margin-inline: auto;
+      padding-inline: 1rem;
+    }
+
+    /* ========= Header ========= */
+    header {
+      padding: 5rem 0 3rem;
+      background:
+        linear-gradient(0deg, transparent, rgba(63,191,107,0.08)),
+        url('assets/leaves-texture.svg') top center / 600px repeat;
+      border-bottom: 1px solid var(--border);
+    }
+    header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: 0.5px;
+      color: #eaf7ed;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, .35);
+    }
+
+    /* ========= Nav (sticky) ========= */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(18,33,23, 0.9);
+      backdrop-filter: saturate(160%) blur(6px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      padding-block: .6rem;
+    }
+    nav ul {
+      display: flex;
+      gap: .5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      display: inline-block;
+      padding: .55rem .85rem;
+      border-radius: 999px;
+      color: var(--text);
+      border: 1px solid transparent;
+      transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+    }
+    nav a:hover,
+    nav a:focus-visible {
+      background: #1b3225;
+      border-color: #274737;
+      outline: none;
+    }
+    .brand {
+      font-weight: 700;
+      color: var(--brand);
+      letter-spacing: .2px;
+    }
+
+    /* ========= Sections ========= */
+    section {
+      padding: 3rem 0;
+    }
+    section h2 {
+      margin: 0 0 1rem;
+      font-size: clamp(1.4rem, 1.2rem + 1.2vw, 2rem);
+      color: var(--accent);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.2rem;
+      box-shadow: var(--shadow);
+    }
+    .stack {
+      display: grid;
+      gap: 1rem;
+    }
+
+    /* ========= Projects grid ========= */
+    .projects {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .project {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+      transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+    }
+    .project:hover {
+      transform: translateY(-3px);
+      border-color: #356b52;
+      box-shadow: 0 10px 20px rgba(0,0,0,.25);
+    }
+    .project h3 {
+      margin: 0 0 .4rem;
+      color: var(--brand);
+      font-size: 1.15rem;
+    }
+    .project p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* ========= Contact / Yhteys ========= */
+    .contact {
+      display: grid;
+      gap: 1rem;
+    }
+    .contact .card p { margin: 0; }
+
+    /* ========= Footer ========= */
+    footer {
+      margin-top: 2rem;
+      border-top: 1px solid var(--border);
+      background: #0b1611;
+    }
+    .footer-inner {
+      display: grid;
+      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      padding: 2rem 1rem 2.4rem;
+    }
+    footer h4 {
+      margin: 0 0 .6rem;
+      font-size: 1.05rem;
+      color: var(--accent);
+    }
+    footer p { margin: 0; color: var(--muted); }
+    footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .4rem; }
+    footer a {
+      color: var(--text);
+      border-bottom: 1px dashed transparent;
+    }
+    footer a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ========= Buttons / details (optional) ========= */
+    .btn {
+      display: inline-block;
+      padding: .6rem .9rem;
+      border-radius: .7rem;
+      background: var(--brand);
+      color: #05240f;
+      font-weight: 600;
+      border: 1px solid var(--brand-strong);
+      box-shadow: 0 2px 0 0 #1c6d3e inset;
+      text-decoration: none;
+    }
+    .btn:hover { background: var(--brand-strong); }
+
+    /* ========= Accessibility ========= */
+    :focus-visible {
+      outline: 3px solid var(--ring);
+      outline-offset: 2px;
+      border-radius: 8px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; scroll-behavior: auto; }
+    }
+    @media (prefers-color-scheme: light) {
+      /* Optional: lighten palette if user prefers light mode */
+      :root {
+        --bg: #f3f7f4;
+        --bg-elev: #ffffff;
+        --card: #ffffff;
+        --text: #1a1f1b;
+        --muted: #3c5042;
+        --border: #d7e3da;
+        --ring: #3fbf6b55;
+      }
+      nav { background: #ffffffea; }
+      header { border-bottom-color: #d7e3da; }
+      .project { background: #f8fbf9; }
+      footer { background: #e9f3ec; }
+    }
+
+    /* ========= About (Minusta) kaksipalstainen asettelu ========= */
+.about {
+  display: grid;
+  gap: 1.2rem;
+  align-items: start;
+  grid-template-columns: 1.2fr .8fr; /* teksti isompi, kuva hieman kapeampi */
+}
+
+/* Pienillä näytöillä pinotaan allekkain */
+@media (max-width: 820px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-text {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-photo {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  /* varmistetaan mielekäs kuvasuhde */
+  aspect-ratio: 4 / 5;              /* voi vaihtaa esim. 1 / 1 jos haluat neliön */
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                 /* täyttää kortin sommitellusti */
+  display: block;
+}
+
+/* Valinnainen kuvateksti */
+.about-caption {
+  color: var(--muted);
+  font-size: .9rem;
+  padding: .6rem .9rem .8rem;
+}
