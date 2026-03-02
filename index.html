@@ -1,113 +1,130 @@
-<!-- Pääsivu. Tämä versio pääsivusta on tarpeettoman runsaasti kommentoitu. Koodin muotoillussa olen pyrkinyt käyttämään yleisiä luettavuuden ohjeita, mutta joissa asioissa olen tehnyt erilaisen valinnan. -->
-<!-- Sivulle voi kirjautua linkillä: https://jiipeefin.github.io/ 
-     Huomaa että sivusto päivittyy muutaman minuutin viiveellä. Erityisesti kotisivu.-->
-
-<!-- Ei pakollinen DOCTYPE:n määrittely. Tässä kohtaa voidaan kertoa selaimelle, että sivu halutaan lukea esim. HTML3-merkintöinä. -->
 <!DOCTYPE html>
-
-<!-- HTML-osion alku. -->
 <html lang="fi">
 
-<!-- Tämän sivuston tarkoituson toimia helppona ja yksikertaisena esimerkkinä portfolio-sivuston toteuttamisesta Front End-kehittäjille. 
-Tarkoitus on myös lisätä tälle verkkosivulle opiskelumateriaaleja eri aiheista. -->
 <head>
-    <!-- Metatiedot selaimia, hakukoneita ja kehittäjiä varten. -->
     <meta charset="UTF-8">
     <meta name="description" content="My personal Portfolio">
     <meta name="keywords" content="HTML, CSS, JavaScript, Portfolio">
     <meta name="author" content="Juha-Pekka Finnilä">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Sivun yläikonin asettaminen. Valittu ikoni on itsetehty. Käyttöoikeus vain itselläni. 😄 -->
     <link rel="icon" type="image/png" href="assets/favicon.png">
-    <!-- Sivun nimi selaimen välilehtiä varten. -->
     <title>JiiPeen portfolio</title>
-    <!-- Tarpeelliset tyylitiedostot virtaavassa järjestyksessä -->
-    <link rel="stylesheet" href="https://unpkg.com/@csstools/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/styles/perustyyli.css">
+    <link rel="stylesheet" type="text/css" href="/styles/greencard.css">
 </head>
 
-<!-- Todellinen näkyvä verkkosivu. Pyritty rakentamaan mahdollisimman semanttisena ja selkeänä. -->
+
 <body>
-    <!-- Sivun yläosa eli header osio. -->
-    <header>
-        <h1>JiiPee <br>Finnilä</h1>
-    </header>
-      
-    <nav>
+  <header>
+    <div class="container">
+      <h1>JiiPee <br> Finnilä</h1>
+    </div>
+  </header>
+
+  <nav aria-label="Päänavigaatio">
+    <div class="container">
+      <div class="brand">JiiPeen portfolio</div>
       <ul>
         <li><a href="#minusta">Tietoa minusta</a></li>
         <li><a href="#projects">Projektit</a></li>
         <li><a href="#yhteys">Ota yhteyttä</a></li>
       </ul>
-    </nav>
-      
-    
-    <section id="minusta">
-      <h2>Tietoa minusta</h2>
-      <article>
-        <p>
-          Olen parantumaton järjestöjäärä, teeintoilija, kirjojen lukija (erityisesti spefi, filosofia,...) ja joka-paikan-höylä. Mitään en osaa hyvin, mutta olen kaikesta kiinnostunut ja osaan edes jotain melkein kaikesta. Harrastan useita asioita. Ja kulutan aikaani tutustumalla uusiin sekä palaamalla toisinaan vanhojen harrastusteni pariin.
-        </p>
-      </article>
-      <article>
-        <p>
-          Ylläpidän omaa osaamistani tekemällä erilaisia projekteja, osallistumalla ammattitaidon kehittämiseen sekä suorittamalla itseopiskelu kursseja ja sertifiointeja. Suurin osa sertifioinneistani olen suorittanut nykyisellä työnantajallani Microsoftin ympäristöistä sekä työkaluista (mm. MIEE, <a href="https://www.credly.com/badges/c656a163-3726-49b3-b1be-241eccbd434b/linked_in_profile">MCE</a>, MOS: Expert (<a href="https://www.credly.com/badges/8a0edcc1-4081-4961-8554-299d3a714c66/linked_in_profile">Word</a>, <a href="https://www.credly.com/badges/beb860b6-84a6-44ad-9270-cf2853abea3e/linked_in_profile">Expert</a>)).
-        </p>
-      </article>
-    </section>
-      
-    <section id="projects">
-      <h2>Projektit</h2>
-      <div class="project">
-        <h3>Projekti 1</h3>
-        <p>Kuvaus projektista 1.</p>
-      </div>
-      <div class="project">
-        <h3>Projekti 2</h3>
-        <p>Kuvaus projektista 2.</p>
-      </div>
-    </section>
-      
-    <section id="yhteys">
-      <h2>Ota yhteyttä</h2>
-      <p>Yhteystietosi tai yhteydenottolomake.</p>
-    </section>
-    
+    </div>
+  </nav>
 
+  <main class="container" id="content">
+    <section id="minusta" aria-labelledby="minusta-title">
+        <h2 id="minusta-title">Tietoa minusta</h2>
+      
+        <div class="about">
+          <!-- Tekstit vasemmalla -->
+          <div class="about-text">
+            <article class="card">
+              <p>
+                Olen parantumaton järjestöjäärä, teeintoilija, kirjojen lukija (erityisesti spefi, filosofia,...) ja joka-paikan-höylä. Mitään en osaa hyvin, mutta olen kaikesta kiinnostunut ja osaan edes jotain melkein kaikesta. Harrastan useita asioita. Ja kulutan aikaani tutustumalla uusiin sekä palaamalla toisinaan vanhojen harrastusteni pariin.
+              </p>
+            </article>
+      
+            <article class="card">
+              <p>
+                Ylläpidän omaa osaamistani tekemällä erilaisia projekteja, osallistumalla ammattitaidon kehittämiseen sekä suorittamalla itseopiskelu kursseja ja sertifiointeja. Suurin osa sertifioinneistani olen suorittanut nykyisellä työnantajallani Microsoftin ympäristöistä sekä työkaluista (mm. MIEE,
+                <a href="https://www.credly.com/badges/c656a163-3726-49b3-b1be-241eccbd434b/linked_in_profile" target="_blank" rel="noopener noreferrer">MCE</a>, MOS: Expert
+                (<a href="https://www.credly.com/badges/8a0edcc1-4081-4961-8554-299d3a714c66/linked_in_profile" target="_blank" rel="noopener noreferrer">Word</a>,
+                <a href="https://www.credly.com/badges/beb860b6-84a6-44ad-9270-cf2853abea3e/linked_in_profile" target="_blank" rel="noopener noreferrer">Expert</a>)).
+              </p>
+            </article>
+          </div>
+      
+          <!-- Kuva oikealla -->
+          <figure class="about-photo card" role="img" aria-label="Juha-Pekka Finnilä luonnonläheisessä ympäristössä">
+            <!-- Voit käyttää <picture> jos haluat 2x- tai WebP-versiot -->
+            <img src="assets/jiipee.jpg" alt="Juha-Pekka Finnilä" />
+            <figcaption class="about-caption">Luonnonläheinen teema – vihreä on hyvä.</figcaption>
+          </figure>
+        </div>
+      </section>
 
-    <!-- Sivun alaosa (footer). Täällä on usein linkkejä ja yleistieto sivusta. -->
-    <footer>
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projektit</h2>
+      <div class="projects">
+        <div class="project">
+          <h3>Projekti 1</h3>
+          <p>Kuvaus projektista 1.</p>
+        </div>
+        <div class="project">
+          <h3>Projekti 2</h3>
+          <p>Kuvaus projektista 2.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="yhteys" aria-labelledby="yhteys-title">
+      <h2 id="yhteys-title">Ota yhteyttä</h2>
+      <div class="contact">
+        <div class="card">
+          <p>Yhteystietosi tai yhteydenottolomake.</p>
+          <!-- Esim. <a class="btn" href="mailto:sinun@osoite.fi">Lähetä sähköpostia</a> -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
       <div>
         <h4>Juha-Pekka Finnilä</h4>
-        <p>&copy; 2023 Oma portfolio</p>
+        <p>&copy; 2023–2026 Oma portfolio</p>
       </div>
-      <!-- Sosiaalisen median ikonit ja linkit -->
+
       <div>
         <h4>Oppiminen</h4>
         <ul>
-          <li><a href="https://github.com/JiiPeeFin">Github</a></li>
-          <li><a href="https://www.credly.com/users/juha-pekka-finnila/">Credly</a></li>
-          <li><a href="https://learn.microsoft.com/en-us/users/jiipee/">Microsoft Learn</a></li>
+          <li><a href="https://github.com/JiiPeeFin" target="_blank" rel="noopener noreferrer">Github</a></li>
+          <li><a href="https://www.credly.com/users/juha-pekka-finnila/" target="_blank" rel="noopener noreferrer">Credly</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/users/jiipee/" target="_blank" rel="noopener noreferrer">Microsoft Learn</a></li>
         </ul>
-      </div><div>
+      </div>
+
+      <div>
         <h4>Sosiaalisuus</h4>
         <ul>
-          <li><a href="https://www.linkedin.com/in/juhapekkafinnila/">LinkedIn</a></li>
-          <li><a href="https://www.instagram.com/jiipee_fin/">Instagram</a></li>
-          <li><a href="https://github.com/JiiPeeFin">Github</a></li>
+          <li><a href="https://www.linkedin.com/in/juhapekkafinnila/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/jiipee_fin/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://github.com/JiiPeeFin" target="_blank" rel="noopener noreferrer">Github</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Harrastukset</h4>
+        <ul>
+          <li><a href="https://www.goodreads.com/user/show/147349183-jiipee" target="_blank" rel="noopener noreferrer">Lueskelu</a></li>
+          <li><a href="#">OAJ</a></li>
+          <li><a href="#">Tee</a></li>
         </ul>
       </div>
     </div>
-    <div>
-      <h4>Harrastukset</h4>
-      <ul>
-        <li><a href="https://www.goodreads.com/user/show/147349183-jiipee">Lueskelu</a></li>
-        <li><a href="">OAJ</a></li>
-        <li><a href="">Tee</a></li>
-        
-      </ul>
-    </div>
-    </footer>
+  </footer>
+</body>
+</html>
 
 
 
